@@ -1,0 +1,13 @@
+{% extends 'landing/base.html' %}
+
+{% block title %}{{ item.title }}{% endblock %}
+
+{% block content %}
+<h1>{{ item.title }}</h1>
+    {% if item.image %}
+<img src="{{ item.image.url }}" alt="{{ item.title }}" width="400">
+    {% endif %}
+<p>{{ item.description }}</p>
+<p><strong>Цена: {{ item.price }} ₽</strong></p>
+<a href="{% url 'home' %}">Назад</a>
+{% endblock %}
